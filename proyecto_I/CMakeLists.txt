@@ -17,5 +17,6 @@ add_executable(proyecto_I
   main.cpp
   Nodo.hpp
   Lista.hpp
+  VSPtr.hpp
 )
 target_link_libraries(proyecto_I Qt5::Core)
