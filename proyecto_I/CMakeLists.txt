@@ -18,5 +18,9 @@ add_executable(proyecto_I
   Nodo.hpp
   Lista.hpp
   VSPtr.hpp
+  garbagecollector.cpp
+  garbagecollector.hpp
+  singleton.cpp
+  singleton.hpp
 )
 target_link_libraries(proyecto_I Qt5::Core)

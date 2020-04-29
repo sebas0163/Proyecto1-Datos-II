@@ -118,7 +118,19 @@
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp">
 			<Option target="proyecto_I"/>
 		</Unit>
+		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp">
+			<Option target="proyecto_I"/>
+		</Unit>
+		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp">
+			<Option target="proyecto_I"/>
+		</Unit>
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp">
+			<Option target="proyecto_I"/>
+		</Unit>
+		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp">
+			<Option target="proyecto_I"/>
+		</Unit>
+		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp">
 			<Option target="proyecto_I"/>
 		</Unit>
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/CMakeLists.txt">
