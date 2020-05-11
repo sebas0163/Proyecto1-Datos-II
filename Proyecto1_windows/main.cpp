@@ -7,19 +7,11 @@
 using namespace std;
 int main(/*int argc, char *argv[]*/)
 {
-    GarbageCollector* garbage = Singleton::getInstancia();
-    cout<<garbage->generarId()<<endl;
-    GarbageCollector* g = Singleton::getInstancia();
-    cout<<g->generarId()<<endl;
-    VSPtr<string> ptr = VSPtr<string>::New();
-    VSPtr<string> ptr2 = VSPtr<string>::New();
-    string p = "adios";
-    ptr = ptr2;
-    ptr = p;
-    *ptr = "hola";
-    cout<<*ptr<<endl;
+    VSPtr<int> puntero = VSPtr<int>::New();
+    int p = 5;
+   *puntero = p;
+    //cout<<&puntero<<endl;
     //QCoreApplication a(argc, argv);
     return 0;
-
     //return a.exec();
 }

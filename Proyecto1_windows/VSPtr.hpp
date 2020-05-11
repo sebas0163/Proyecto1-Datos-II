@@ -8,6 +8,7 @@ using namespace std;
 template <typename T> class VSPtr{
 public:
     VSPtr(){
+        dato = nullptr;
         id = 0;
         ref=1;
     }
@@ -29,8 +30,8 @@ public:
     void setDta(T data){
         dato = data;
     }
-    T operator *(){
-        return dato;
+    VSPtr<T> operator *(){
+        return *this;
     }
     T operator &(){
         return *dato;
@@ -41,8 +42,9 @@ public:
         return;
     }
     void operator=(T data){
-        if(sizeof (dato)== sizeof(data)){
-            dato = data;
+        if(sizeof (*dato)== sizeof(data)){
+            dato = &data;
+            cout<<*dato<<endl;
         }else{
             cout<<"No es posible realizar la accion"<<endl;
         }
@@ -51,9 +53,9 @@ public:
         cout<<"se ha destruido con exito"<<endl;
     }
 
+
 private:
-    T dato;
-    int memory;
+    T* dato;
     int id;
     int ref;
 };
