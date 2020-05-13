@@ -2,27 +2,18 @@
 #define VSPTR_HPP
 #include "Lista.hpp"
 #include <iostream>
+#include "puntero.hpp"
+#include "garbagecollector.hpp"
+#include "singleton.hpp"
 
 using namespace std;
 
-template <typename T> class VSPtr{
+template <typename T> class VSPtr : public Puntero{
 public:
     VSPtr(){
+        GarbageCollector* gc = Singleton::getInstancia();
         dato = new T;
-        id = 0;
-        ref=1;
-    }
-    void setId(int ID){
-        id = ID;
-    }
-    void setRef(int re){
-        ref = re;
-    }
-    int getId(){
-        return id;
-    }
-    int getRef(){
-        return ref;
+        gc->agregarPuntero(this);
     }
     static VSPtr New(){
         return VSPtr();
@@ -60,7 +51,5 @@ public:
 
 private:
     T* dato;
-    int id;
-    int ref;
 };
 #endif // VSPTR_H
