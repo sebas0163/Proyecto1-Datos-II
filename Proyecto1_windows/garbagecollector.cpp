@@ -3,7 +3,7 @@
 
 GarbageCollector::GarbageCollector()
 {
-    direcciones = Lista<int>();
+    direcciones = Lista<Puntero*>();
     ids = Lista<int>();
 }
 int GarbageCollector::generarId(){
@@ -18,9 +18,16 @@ int GarbageCollector::generarId(){
     ids.add(id);
     return id;
 }
-void GarbageCollector::agregarPuntero(int ptr){
+void GarbageCollector::agregarPuntero(Puntero* ptr){
     direcciones.add(ptr);
+    ptr->setId(generarId());
 }
-void GarbageCollector::aumentarRef(int direc){
-
+void GarbageCollector::eliminarPtr(Puntero * ptr){
+    int i =direcciones.getPos(ptr);
+    direcciones.eliminar(i);
 }
+/*void GarbageCollector::verificar(){
+    for (int i =0;i<direcciones.largo;i++){
+        direcciones.buscar(i).dato->getdato()
+    }
+}*/
