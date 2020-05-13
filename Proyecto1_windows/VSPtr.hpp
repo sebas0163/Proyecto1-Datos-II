@@ -8,7 +8,7 @@ using namespace std;
 template <typename T> class VSPtr{
 public:
     VSPtr(){
-        dato = nullptr;
+        dato = new T;
         id = 0;
         ref=1;
     }
@@ -27,30 +27,34 @@ public:
     static VSPtr New(){
         return VSPtr();
     }
-    void setDta(T data){
-        dato = data;
+    void setData(T data){
+        *dato = data;
     }
-    VSPtr<T> operator *(){
+    VSPtr<T>& operator *(){
         return *this;
     }
     T operator &(){
         return *dato;
     }
+    T* getDato(){
+        return dato;
+    }
     void operator =(VSPtr pointer){
         this->setId(pointer.getId());
+        this->dato = pointer.getDato();
         cout<<"copie el id en el garbage y aumentê la referencia"<< endl;
         return;
     }
     void operator=(T data){
         if(sizeof (*dato)== sizeof(data)){
-            dato = &data;
-            cout<<*dato<<endl;
+            setData(data);
         }else{
             cout<<"No es posible realizar la accion"<<endl;
         }
      }
     void destruir(){
-        cout<<"se ha destruido con exito"<<endl;
+        delete dato;
+        cout<<"se ha destruido la referencia con exito"<<endl;
     }
 
 

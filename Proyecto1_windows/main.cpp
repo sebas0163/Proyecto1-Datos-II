@@ -7,10 +7,14 @@
 using namespace std;
 int main(/*int argc, char *argv[]*/)
 {
+    GarbageCollector* gc = Singleton::getInstancia();
     VSPtr<int> puntero = VSPtr<int>::New();
-    int p = 5;
-   *puntero = p;
-    //cout<<&puntero<<endl;
+    VSPtr<int> ptr = VSPtr<int>::New();
+   *ptr = 8;
+   *puntero = 4;
+    puntero = ptr;
+    cout<<&puntero<<endl;
+    cout<<&ptr<<endl;
     //QCoreApplication a(argc, argv);
     return 0;
     //return a.exec();
