@@ -9,6 +9,7 @@ public:
     SOCKET server;
     SOCKADDR_IN addr;
     char buffer[1024];
+    bool Run = TRUE;
     Client()
     {
         cout<<"Conectando al servidor..."<<endl<<endl;
@@ -17,27 +18,52 @@ public:
         addr.sin_addr.s_addr = inet_addr("192.168.1.14");
         addr.sin_family = AF_INET;
         addr.sin_port = htons(5555);
-        connect(server, (SOCKADDR *)&addr, sizeof(addr));
+        int status = connect(server, (SOCKADDR *)&addr, sizeof(addr));
+        
+        if(status < 0)
+        {
+            cout<<"Error connecting to socket!"<<endl;
+            this->Run=FALSE;
+            
+        }else{
         cout << "Conectado al Servidor!" << endl;
+        }
     }
     void Enviar()
     {
         cout<<"Escribe el mensaje a enviar: ";
         cin>>this->buffer;
-        send(server, buffer, sizeof(buffer), 0);
-        memset(buffer, 0, sizeof(buffer));
-        cout << "Mensaje enviado!" << endl;
+        //cout<<"mensaje enviado: " <<this->buffer<<endl;
+        string str (this->buffer);
+        if(str != "close")
+        {
+            //cout<<"comparacion: " <<"diferente" << endl;
+            send(server, buffer, sizeof(buffer), 0);           
+            memset(buffer, 0, sizeof(buffer));
+            cout << "Mensaje enviado!" << endl;
+        }else{
+            send(server, buffer, sizeof(buffer), 0);
+            memset(buffer, 0, sizeof(buffer));
+            this->CerrarSocket();
+            
+        }
+            
     }
     void Recibir()
     {
-        recv(server, buffer, sizeof(buffer), 0);
-        cout << "El servidor dice: " << buffer << endl;
-        memset(buffer, 0, sizeof(buffer));
+        if(this->Run==TRUE)
+        {
+            recv(server, buffer, sizeof(buffer), 0);
+            cout << "El servidor dice: " << buffer << endl;
+            memset(buffer, 0, sizeof(buffer));
+        }
+        
     }
     void CerrarSocket()
     {
        closesocket(server);
        WSACleanup();
+       Run = FALSE;
        cout << "Socket cerrado." << endl << endl;
     }
 };
@@ -45,7 +71,8 @@ public:
 int main()
 {
     Client *Cliente = new Client();
-    while(true)
+    //Cliente->Run=TRUE;
+    while(Cliente->Run==TRUE)
     {
         Cliente->Enviar();
         Cliente->Recibir();

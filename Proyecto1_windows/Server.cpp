@@ -9,8 +9,10 @@ public:
     SOCKET server, client;
     SOCKADDR_IN serverAddr, clientAddr;
     char buffer[1024];
+    bool Run = TRUE;
     Server()
     {
+        
         WSAStartup(MAKEWORD(2,0), &WSAData);
         server = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -31,9 +33,22 @@ public:
 
     string Recibir()
     {
-      recv(client, buffer, sizeof(buffer), 0);
-      cout << "El cliente dice: " << buffer << endl;
-      memset(buffer, 0, sizeof(buffer));
+        
+        recv(client, buffer, sizeof(buffer), 0);
+        string str (this->buffer);
+        cout<<str<<endl;
+        if( str == "close")
+        {
+            cout<< str << endl;
+            memset(buffer, 0, sizeof(buffer));
+            this->CerrarSocket();
+
+        }else{
+
+            cout << "El cliente dice: " << buffer << endl;
+            memset(buffer, 0, sizeof(buffer));
+        }
+        
     }
     void Enviar()
     {
@@ -47,6 +62,7 @@ public:
     {
         closesocket(client);
         cout << "Socket cerrado, cliente desconectado." << endl;
+        this->Run = FALSE;
     }
 };
 
@@ -54,7 +70,7 @@ public:
 int main()
 {
   Server *Servidor = new Server();
-  while(true)
+  while(Servidor->Run == TRUE)
   {
      Servidor->Recibir();
      Servidor->Enviar();
