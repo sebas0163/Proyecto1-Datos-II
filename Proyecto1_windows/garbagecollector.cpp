@@ -26,8 +26,14 @@ void GarbageCollector::eliminarPtr(Puntero * ptr){
     int i =direcciones.getPos(ptr);
     direcciones.eliminar(i);
 }
-/*void GarbageCollector::verificar(){
-    for (int i =0;i<direcciones.largo;i++){
-        direcciones.buscar(i).dato->getdato()
+void GarbageCollector::verificar(){
+    int i = 0;
+    while (i<direcciones.largo){
+        if(direcciones.buscar(i).dato->comprobar()){
+            direcciones.buscar(i).dato->destruir();
+            direcciones.eliminarPos(i);
+        }else{
+            i++;
+        }
     }
-}*/
+}

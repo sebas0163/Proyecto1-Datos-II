@@ -27,6 +27,14 @@ public:
     T operator &(){
         return *dato;
     }
+    bool comprobar(){
+        if (dato == nullptr){
+            return true;
+        }else{
+            return false;
+        }
+        Puntero::comprobar();
+    }
     T* getDato(){
         return dato;
     }
@@ -43,9 +51,13 @@ public:
             cout<<"No es posible realizar la accion"<<endl;
         }
      }
+    void eliminarRef(){
+        dato = nullptr;
+    }
     void destruir(){
         delete dato;
         cout<<"se ha destruido la referencia con exito"<<endl;
+        Puntero::destruir();
     }
 
 

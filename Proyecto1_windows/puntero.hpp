@@ -9,6 +9,8 @@ public:
     Puntero();
     void setId(int);
     int getId();
+    virtual bool comprobar();
+    virtual void destruir();
 };
 
 #endif // PUNTERO_HPP

@@ -10,3 +10,10 @@ int Puntero::getId(){
 void Puntero::setId(int num){
     id = num;
 }
+bool Puntero::comprobar(){
+    return true;
+}
+void Puntero::destruir(){
+
+}
+
