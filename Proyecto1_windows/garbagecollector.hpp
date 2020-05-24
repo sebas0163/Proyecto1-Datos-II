@@ -17,6 +17,7 @@ public:
     void eliminarPtr(Puntero*);
     void agregarPuntero(Puntero*);
     void verificar();
+    void mostrarL();
 private:
         Lista<Puntero*> direcciones;
         Lista<int> ids;

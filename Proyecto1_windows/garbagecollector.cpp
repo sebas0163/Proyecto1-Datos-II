@@ -22,18 +22,22 @@ void GarbageCollector::agregarPuntero(Puntero* ptr){
     direcciones.add(ptr);
     ptr->setId(generarId());
 }
-void GarbageCollector::eliminarPtr(Puntero * ptr){
-    int i =direcciones.getPos(ptr);
-    direcciones.eliminar(i);
-}
 void GarbageCollector::verificar(){
     int i = 0;
     while (i<direcciones.largo){
         if(direcciones.buscar(i).dato->comprobar()){
             direcciones.buscar(i).dato->destruir();
-            direcciones.eliminarPos(i);
+            delete direcciones.buscar(i).dato;
+            direcciones.eliminar(i);
+            ids.eliminar(i);
+            cout<<"aui estoy"<<endl;
         }else{
             i++;
         }
+    }
+}
+void GarbageCollector::mostrarL(){
+    for (int i =0; i<direcciones.largo;i++){
+        cout<<direcciones.buscar(i).dato->getId()<<endl;
     }
 }
