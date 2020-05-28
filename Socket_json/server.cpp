@@ -14,30 +14,43 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <fstream>
+//#include "jsoncpp/json/json.h"
+
+
 using namespace std;
+
+/*void bwrite(){
+
+  Json::Value root; //dato del json a sobreescribir
+  root["conexiones"][0]["Usuario"] = "Harold";
+  Json::StyledWriter SW;
+  ofstream OS;
+  OS.open("LogServer.json");
+  OS << SW.write(root);
+  //root["conexiones"][1]["Usuario2"] = "cliente 2" ;
+  //OS << SW.write(root);
+  OS.close();
+  cout<<"\n json escrito \n";
+
+}
+*/
+
 //Server side
 int main(int argc, char *argv[])
 {
-    //for the server, we only need to specify a port number
-    if(argc != 2)
-    {
-        cerr << "Usage: port" << endl;
-        exit(0);
-    }
-    //grab the port number
-    int port = atoi(argv[1]);
     //buffer to send and receive messages with
     char msg[1500];
      
     //setup a socket and connection tools
-    sockaddr_in servAddr;
-    bzero((char*)&servAddr, sizeof(servAddr));
+    
+    struct sockaddr_in servAddr;
+    int addrlen = sizeof(servAddr);
     servAddr.sin_family = AF_INET;
-    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
-    servAddr.sin_port = htons(port);
+    servAddr.sin_addr.s_addr = INADDR_ANY;
+    servAddr.sin_port = 12345;
  
-    //open stream oriented socket with internet address
-    //also keep track of the socket descriptor
+    /*open stream oriented socket with internet address
+    also keep track of the socket descriptor*/
     int serverSd = socket(AF_INET, SOCK_STREAM, 0);
     if(serverSd < 0)
     {
@@ -61,6 +74,7 @@ int main(int argc, char *argv[])
     socklen_t newSockAddrSize = sizeof(newSockAddr);
     //accept, create a new socket descriptor to 
     //handle the new connection with client
+
     int newSd = accept(serverSd, (sockaddr *)&newSockAddr, &newSockAddrSize);
     if(newSd < 0)
     {
@@ -68,6 +82,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
     cout << "Connected with client!" << endl;
+
     //lets keep track of the session time
     struct timeval start1, end1;
     gettimeofday(&start1, NULL);
@@ -76,6 +91,8 @@ int main(int argc, char *argv[])
     while(1)
     {
         //receive a message from the client (listen)
+        //bwrite();
+
         cout << "Awaiting client response..." << endl;
         memset(&msg, 0, sizeof(msg));//clear the buffer
         bytesRead += recv(newSd, (char*)&msg, sizeof(msg), 0);

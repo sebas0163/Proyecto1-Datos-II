@@ -1,0 +1,17 @@
+{
+   "conexiones" : [
+      {
+         "Usuario" : "Harold"
+      }
+   ]
+}
+{
+   "conexiones" : [
+      {
+         "Usuario" : "Harold"
+      },
+      {
+         "Usuario2" : "cliente 2"
+      }
+   ]
+}
