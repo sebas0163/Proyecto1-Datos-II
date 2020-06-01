@@ -237,6 +237,33 @@ proyecto_I_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/proyecto_I_autogen/mocs_compilation.cpp.s
 .PHONY : proyecto_I_autogen/mocs_compilation.cpp.s
 
+puntero.o: puntero.cpp.o
+
+.PHONY : puntero.o
+
+# target to build an object file
+puntero.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/puntero.cpp.o
+.PHONY : puntero.cpp.o
+
+puntero.i: puntero.cpp.i
+
+.PHONY : puntero.i
+
+# target to preprocess a source file
+puntero.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/puntero.cpp.i
+.PHONY : puntero.cpp.i
+
+puntero.s: puntero.cpp.s
+
+.PHONY : puntero.s
+
+# target to generate assembly for a file
+puntero.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/puntero.cpp.s
+.PHONY : puntero.cpp.s
+
 singleton.o: singleton.cpp.o
 
 .PHONY : singleton.o
@@ -283,6 +310,9 @@ help:
 	@echo "... proyecto_I_autogen/mocs_compilation.o"
 	@echo "... proyecto_I_autogen/mocs_compilation.i"
 	@echo "... proyecto_I_autogen/mocs_compilation.s"
+	@echo "... puntero.o"
+	@echo "... puntero.i"
+	@echo "... puntero.s"
 	@echo "... singleton.o"
 	@echo "... singleton.i"
 	@echo "... singleton.s"

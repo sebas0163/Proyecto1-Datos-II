@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o"
   "CMakeFiles/proyecto_I.dir/main.cpp.o"
   "CMakeFiles/proyecto_I.dir/proyecto_I_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/proyecto_I.dir/puntero.cpp.o"
   "CMakeFiles/proyecto_I.dir/singleton.cpp.o"
   "proyecto_I"
   "proyecto_I.pdb"

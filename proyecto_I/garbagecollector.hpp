@@ -2,7 +2,7 @@
 #define GARBAGECOLLECTOR_HPP
 #include <iostream>
 #include "Lista.hpp"
-#include "VSPtr.hpp"
+#include "puntero.hpp"
 
 using namespace std;
 
@@ -14,10 +14,12 @@ public:
     GarbageCollector();
     void aumentarRef(int);
     int generarId();
-    void eliminarPtr(int);
-    void agregarPuntero(int);
+    void eliminarPtr(Puntero*);
+    void agregarPuntero(Puntero*);
+    void verificar();
+    void mostrarL();
 private:
-        Lista<int> direcciones;
+        Lista<Puntero*> direcciones;
         Lista<int> ids;
 };
 

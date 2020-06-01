@@ -127,6 +127,12 @@
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp">
 			<Option target="proyecto_I"/>
 		</Unit>
+		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.cpp">
+			<Option target="proyecto_I"/>
+		</Unit>
+		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp">
+			<Option target="proyecto_I"/>
+		</Unit>
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp">
 			<Option target="proyecto_I"/>
 		</Unit>

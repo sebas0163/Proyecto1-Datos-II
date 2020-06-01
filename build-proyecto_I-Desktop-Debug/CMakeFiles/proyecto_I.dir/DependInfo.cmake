@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp" "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o"
   "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp" "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir/main.cpp.o"
   "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/proyecto_I_autogen/mocs_compilation.cpp" "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir/proyecto_I_autogen/mocs_compilation.cpp.o"
+  "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.cpp" "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir/puntero.cpp.o"
   "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp" "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir/singleton.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
