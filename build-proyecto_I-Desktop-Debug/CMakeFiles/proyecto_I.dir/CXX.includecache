@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.cpp
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
+Nodo.hpp
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
+iostream
+-
+
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
+
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp
+garbagecollector.hpp
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+iostream
+-
+Lista.hpp
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
 puntero.hpp
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
 

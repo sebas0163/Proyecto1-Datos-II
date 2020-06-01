@@ -3,15 +3,16 @@
 
 CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
 CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
-CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp
 CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp
 CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
 
 CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/main.cpp
+CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o: /usr/include/qt/QtCore/QCoreApplication
 CMakeFiles/proyecto_I.dir/main.cpp.o: /usr/include/qt/QtCore/qalgorithms.h
@@ -76,8 +77,8 @@ CMakeFiles/proyecto_I.dir/puntero.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Pro
 
 CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
 CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
-CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp
 CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
 CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp
 CMakeFiles/proyecto_I.dir/singleton.cpp.o: /home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
 

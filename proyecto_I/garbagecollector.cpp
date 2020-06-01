@@ -27,7 +27,7 @@ void GarbageCollector::verificar(){
     while (i<direcciones.largo){
         if(direcciones.buscar(i).dato->comprobar()){
             direcciones.buscar(i).dato->destruir();
-            delete direcciones.buscar(i).dato;
+            //delete direcciones.buscar(i).dato;
             direcciones.eliminar(i);
             ids.eliminar(i);
             cout<<"aui estoy"<<endl;

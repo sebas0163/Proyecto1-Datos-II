@@ -4,15 +4,16 @@
 CMakeFiles/proyecto_I.dir/garbagecollector.cpp.o
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
- /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+ /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
 CMakeFiles/proyecto_I.dir/main.cpp.o
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp
+ /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
  /usr/include/qt/QtCore/QCoreApplication
  /usr/include/qt/QtCore/qalgorithms.h
@@ -77,7 +78,7 @@ CMakeFiles/proyecto_I.dir/puntero.cpp.o
 CMakeFiles/proyecto_I.dir/singleton.cpp.o
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp
- /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+ /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp
  /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
