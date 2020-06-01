@@ -1,0 +1,106 @@
+{
+	"BUILD_DIR" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/proyecto_I_autogen",
+	"CMAKE_BINARY_DIR" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Lista.hpp",
+			"MU",
+			"EWIEGA46WW/moc_Lista.cpp"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/Nodo.hpp",
+			"MU",
+			"EWIEGA46WW/moc_Nodo.cpp"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp",
+			"MU",
+			"EWIEGA46WW/moc_VSPtr.cpp"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp",
+			"MU",
+			"EWIEGA46WW/moc_garbagecollector.cpp"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp",
+			"MU",
+			"EWIEGA46WW/moc_singleton.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/proyecto_I_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/proyecto_I_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug",
+		"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I",
+		"/usr/include/qt",
+		"/usr/include/qt/QtCore",
+		"/usr/lib/qt/mkspecs/linux-g++",
+		"/usr/include/c++/9.3.0",
+		"/usr/include/c++/9.3.0/x86_64-pc-linux-gnu",
+		"/usr/include/c++/9.3.0/backward",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include",
+		"/usr/local/include",
+		"/usr/lib/gcc/x86_64-pc-linux-gnu/9.3.0/include-fixed",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/g++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.17/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/proyecto_I_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/bin/moc",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 14,
+	"SETTINGS_FILE" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp",
+			"MU"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp",
+			"MU"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
