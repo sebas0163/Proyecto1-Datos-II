@@ -22,5 +22,7 @@ add_executable(proyecto_I
   garbagecollector.hpp
   singleton.cpp
   singleton.hpp
+  puntero.hpp
+  puntero.cpp
 )
 target_link_libraries(proyecto_I Qt5::Core)

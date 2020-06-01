@@ -139,6 +139,7 @@ template<typename T>class Lista
                 cout<<"no exite la posicion"<< endl;
             }else if (pos ==0){
                 head = head->next;
+                largo--;
             }else{
                 Nodo<T>* temp = head ->next;
                 Nodo<T>* prev= head;
