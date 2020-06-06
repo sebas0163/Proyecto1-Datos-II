@@ -14,26 +14,32 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <fstream>
-//#include "jsoncpp/json/json.h"
+#include "jsoncpp/json/json.h"
+#include "md5.h"
+#include "md5.cpp"
 
 
 using namespace std;
 
-/*void bwrite(){
+void bwrite(string user, int *puntero){
 
-  Json::Value root; //dato del json a sobreescribir
-  root["conexiones"][0]["Usuario"] = "Harold";
-  Json::StyledWriter SW;
-  ofstream OS;
-  OS.open("LogServer.json");
-  OS << SW.write(root);
-  //root["conexiones"][1]["Usuario2"] = "cliente 2" ;
-  //OS << SW.write(root);
-  OS.close();
-  cout<<"\n json escrito \n";
+    ifstream ifs("LogServer.json");
+    Json::Reader reader;
+    Json::Value obj;
+    reader.parse(ifs, obj); 
+    ifs.close();
+    obj["conexiones"]["Usuario"][*puntero] = user;
+
+    Json::StyledWriter SW;
+    ofstream OS;
+    OS.open("LogServer.json");
+    OS << SW.write(obj);
+    OS.close();
+    *puntero += 1;
+    cout<<"\n json escrito \n";
 
 }
-*/
+
 
 //Server side
 int main(int argc, char *argv[])
@@ -68,10 +74,12 @@ int main(int argc, char *argv[])
     cout << "Waiting for a client to connect..." << endl;
     //listen for up to 5 requests at a time
     listen(serverSd, 5);
+    
     //receive a request from client using accept
     //we need a new address to connect with the client
     sockaddr_in newSockAddr;
     socklen_t newSockAddrSize = sizeof(newSockAddr);
+
     //accept, create a new socket descriptor to 
     //handle the new connection with client
 
@@ -81,21 +89,64 @@ int main(int argc, char *argv[])
         cerr << "Error accepting request from client!" << endl;
         exit(1);
     }
+
+
     cout << "Connected with client!" << endl;
 
     //lets keep track of the session time
     struct timeval start1, end1;
     gettimeofday(&start1, NULL);
     //also keep track of the amount of data sent as well
+
+    string pswrd = md5("contra");
+    
+    int i = 0;
+    int *contador = &i;
+
+    int cpw = 0;
+
     int bytesRead, bytesWritten = 0;
+    
+    
     while(1)
     {
-        //receive a message from the client (listen)
-        //bwrite();
 
         cout << "Awaiting client response..." << endl;
-        memset(&msg, 0, sizeof(msg));//clear the buffer
+        memset(&msg, 0, sizeof(msg)); //clear the buffer
+
+        if (cpw == 0){
+            bool B = true;
+            while (B)
+            {
+            memset(&msg, 0, sizeof(msg));//clear the buffer
+            bytesRead += recv(newSd, (char*)&msg, sizeof(msg), 0);
+            if(!strcmp(msg, pswrd.c_str()))
+            {
+                    bwrite("usuario",contador);
+                    B = false;
+                    cpw = 1;
+                    string data = "Correct";
+                    memset(&msg, 0, sizeof(msg)); //clear the buffer
+                    strcpy(msg, data.c_str());
+                    send(newSd, (char*)&msg, strlen(msg), 0);
+                    
+
+                    cout << "entro al if" << endl;
+
+            }else{
+                    string data = "Incorrect";
+                    memset(&msg, 0, sizeof(msg)); //clear the buffer
+                    strcpy(msg, data.c_str());
+                    send(newSd, (char*)&msg, strlen(msg), 0);
+
+            }
+
+            }           
+             
+        }
+        memset(&msg, 0, sizeof(msg)); //clear the buffer
         bytesRead += recv(newSd, (char*)&msg, sizeof(msg), 0);
+
         if(!strcmp(msg, "exit"))
         {
             cout << "Client has quit the session" << endl;
@@ -115,6 +166,7 @@ int main(int argc, char *argv[])
         }
         //send the message to client
         bytesWritten += send(newSd, (char*)&msg, strlen(msg), 0);
+        
     }
     //we need to close the socket descriptors after we're all done
     gettimeofday(&end1, NULL);
@@ -125,5 +177,6 @@ int main(int argc, char *argv[])
     cout << "Elapsed time: " << (end1.tv_sec - start1.tv_sec) 
         << " secs" << endl;
     cout << "Connection closed..." << endl;
+    
     return 0;   
 }

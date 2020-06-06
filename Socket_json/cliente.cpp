@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -15,6 +14,10 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <fstream>
+#include "md5.h"
+#include "md5.cpp"
+
+
 using namespace std;
 //Client side
 int main(int argc, char *argv[])
@@ -22,6 +25,7 @@ int main(int argc, char *argv[])
     //we need 2 things: ip address and port number, in that order
     
     //create a message buffer 
+    
     char msg[1500]; 
     //setup a socket and connection tools 
     //struct hostent* host = gethostbyname(serverIp);
@@ -44,17 +48,34 @@ int main(int argc, char *argv[])
     {
         cout<<"Error connecting to socket!"<<endl; /*break;*/
     }
-    cout << "Connected to the server!" << endl;
+    cout << "Ingrese la contrasenia" << endl;
+
+    /*string data;
+    getline(cin, data);
+    
+    memset(&msg, 0, sizeof(msg));//clear the buffer
+    strcpy(msg, md5(data).c_str());*/
+
+
     int bytesRead, bytesWritten = 0;
     struct timeval start1, end1;
     gettimeofday(&start1, NULL);
+    int init = 0;
     while(1)
     {
+        
         cout << ">";
         string data;
         getline(cin, data);
-        memset(&msg, 0, sizeof(msg));//clear the buffer
-        strcpy(msg, data.c_str());
+        if(init == 0 ){
+            memset(&msg, 0, sizeof(msg));//clear the buffer
+            strcpy(msg, md5(data).c_str());
+            init = 1;
+        }else{
+            memset(&msg, 0, sizeof(msg));//clear the buffer
+            strcpy(msg, data.c_str());  
+        }
+        
         if(data == "exit")
         {
             send(clientSd, (char*)&msg, strlen(msg), 0);
@@ -64,10 +85,18 @@ int main(int argc, char *argv[])
         cout << "Awaiting server response..." << endl;
         memset(&msg, 0, sizeof(msg));//clear the buffer
         bytesRead += recv(clientSd, (char*)&msg, sizeof(msg), 0);
+        cout << "respuesta: " << msg << endl;
         if(!strcmp(msg, "exit"))
         {
             cout << "Server has quit the session" << endl;
             break;
+        
+        }
+        
+        if(!strcmp(msg, "Incorrect"))
+        {
+            init = 0;
+            cout << "Entro al if de incorrect" << endl;
         }
         cout << "Server: " << msg << endl;
     }
