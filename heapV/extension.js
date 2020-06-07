@@ -8,6 +8,7 @@ const vscode = require('vscode');
 /**
  * @param {vscode.ExtensionContext} context
  */
+var punt;
 function activate(context) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand('heapV.mostrar', () => {
@@ -20,7 +21,7 @@ function activate(context) {
 		  );
 		  
       		const updateWebview = () => {
-			panel.webview.html = getWebviewContent();
+			panel.webview.html = getWebviewContent(punt);
 			  }
 			panel.webview.onDidReceiveMessage(
 				message => {
@@ -42,7 +43,11 @@ function activate(context) {
 	  );
 }
 exports.activate = activate;
-function getWebviewContent() {
+function actualizar(punteros){
+	punt =  punteros;
+}
+
+function getWebviewContent(puntero) {
 	return ` <!DOCTYPE html>
 	<html>
 	<head>
@@ -131,6 +136,7 @@ function getWebviewContent() {
 				<th>Valor Almacenado</th>
 				<th>Referencias</th>
 			</tr>
+			"${puntero}"
 		</table>
 		<script>
         window.onload = function(){
