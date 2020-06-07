@@ -12,7 +12,7 @@ var punt;
 function activate(context) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand('heapV.mostrar', () => {
-		  // Create and show panel
+		  // Crea el panel de webview
 		  const panel = vscode.window.createWebviewPanel(
 			'HeapVisualizer',
 			'Heap Visualizer',
@@ -20,9 +20,11 @@ function activate(context) {
 			{enableScripts: true}
 		  );
 		  
+			// Está constantemente actualizando el web view
       		const updateWebview = () => {
-			panel.webview.html = getWebviewContent(punt);
-			  }
+				actualizar();
+				panel.webview.html = getWebviewContent(punt);
+			  	}
 			panel.webview.onDidReceiveMessage(
 				message => {
 				  switch (message.command) {
@@ -35,18 +37,27 @@ function activate(context) {
         		context.subscriptions
 				);
 			updateWebview();
-
-			setInterval(updateWebview, 5000);
-		  // And set its HTML content
+		 // intervalo de la actualizacion cada 5 segundos.
+			const interval = setInterval(updateWebview, 5000);
+		 //Limpia el intervalo cuando se cierra la web view
+		  panel.onDidDispose(
+			  ()=>{
+				  clearInterval(interval);
+			  },null,
+			  context.subscriptions
+		  )
 		})
 
 	  );
 }
 exports.activate = activate;
+//actualiza los datos de la tabla, el socket envia los punteros.
 function actualizar(punteros){
-	punt =  punteros;
+	punt =  `<tr>
+		<td> gola</td>
+	</tr>`;
 }
-
+// retorna la estructura del html
 function getWebviewContent(puntero) {
 	return ` <!DOCTYPE html>
 	<html>

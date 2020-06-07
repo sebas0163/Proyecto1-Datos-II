@@ -18,6 +18,7 @@ public:
     void agregarPuntero(Puntero*);
     void verificar();
     void mostrarL();
+    string enviarInfo();
 private:
         Lista<Puntero*> direcciones;
         Lista<int> ids;

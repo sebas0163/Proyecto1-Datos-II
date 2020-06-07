@@ -16,4 +16,7 @@ bool Puntero::comprobar(){
 void Puntero::destruir(){
 
 }
+string Puntero::obtener_data(){
+ cout<<"hola"<<endl;
+}
 

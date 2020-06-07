@@ -36,8 +36,15 @@ void GarbageCollector::verificar(){
         }
     }
 }
+string GarbageCollector::enviarInfo(){
+    string info ="";
+    for (int i =0; i<direcciones.largo;i++){
+        info = info + direcciones.buscar(i).dato->obtener_data();
+      }
+    return info;
+}
 void GarbageCollector::mostrarL(){
     for (int i =0; i<direcciones.largo;i++){
         cout<<direcciones.buscar(i).dato->getId()<<endl;
-    }
+      }
 }

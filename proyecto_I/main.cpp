@@ -21,6 +21,8 @@ int main(int argc, char *argv[])
     VSPtr<int> vs = VSPtr<int>::New();
     vs = 2;
     gc->mostrarL();
+    //vs.obtener_data();
+    cout<<gc->enviarInfo()<<endl;
     //cout<<puntero.getId()<<endl;
     //cout<<ptr.getId()<<endl;
     QCoreApplication a(argc, argv);

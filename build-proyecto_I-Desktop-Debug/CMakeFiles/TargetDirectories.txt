@@ -1,4 +1,4 @@
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/rebuild_cache.dir
-/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I.dir
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I_autogen.dir

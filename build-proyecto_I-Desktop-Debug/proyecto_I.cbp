@@ -27,6 +27,16 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="proyecto_I">
 				<Option output="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/proyecto_I" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug"/>
@@ -80,16 +90,6 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 proyecto_I/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/sebastian/Escritorio/Datos\ 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/Makefile&quot;  VERBOSE=1 clean"/>

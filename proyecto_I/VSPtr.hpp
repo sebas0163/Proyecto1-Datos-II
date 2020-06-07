@@ -107,9 +107,23 @@ public:
         cout<<"se ha destruido la referencia con exito"<<endl;
         Puntero::destruir();
     }
+    string obtener_data(){
+        long  direccion = (long)dato;
+        string str_dat;
+        string data;
+        try {
+            str_dat = to_string(*dato); //bug con strings
+        }  catch (exception& e) {
+            cout<<"error"<<endl;
+        }
+        string tipo =typeid(*dato).name();
+        data= "<tr><td>"+tipo+"</td>"+"<td>"+to_string(direccion)+"</td>"+"<td>"+str_dat + "</td></tr>";
+        return data;
+    }
 
 
 private:
     T* dato;
+
 };
 #endif // VSPTR_H
