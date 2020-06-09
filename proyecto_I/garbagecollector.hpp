@@ -3,10 +3,16 @@
 #include <iostream>
 #include "Lista.hpp"
 #include "puntero.hpp"
-
+/**
+ *@file garbagecollector.hpp
+ * @author Sebastián moya
+ * @brief Clase plantilla para el garbage collector
+ */
 using namespace std;
 
-
+/**
+ * @brief The GarbageCollector class clase encargada de guardar los punteros creados
+ */
 class GarbageCollector
 {
 public:

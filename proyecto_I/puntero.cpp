@@ -1,5 +1,7 @@
 #include "puntero.hpp"
-
+/**
+ * @brief Puntero::Puntero constructor de la clase. inicializa el id en 0
+ */
 Puntero::Puntero()
 {
     id =0;

@@ -9,6 +9,9 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 var punt;
+var fs = require("fs");
+var path = require("path");
+const folderpath = vscode.workspace.workspaceFolders[0].uri.toString().split(":")[1];
 function activate(context) {
 	context.subscriptions.push(
 		vscode.commands.registerCommand('heapV.mostrar', () => {
@@ -21,6 +24,7 @@ function activate(context) {
 		  );
 		  
 			// Está constantemente actualizando el web view
+			crearArchivos();
       		const updateWebview = () => {
 				actualizar();
 				panel.webview.html = getWebviewContent(punt);
@@ -29,7 +33,14 @@ function activate(context) {
 				message => {
 				  switch (message.command) {
 					case 'alert':
-					  vscode.window.showErrorMessage(message.text);
+					  vscode.window.showInformationMessage("Se está guardando la conexión con el servidor");
+					  // Aquí se debe insertar el código de envio del mensaje con el socket, el mensaje se obtiene con el comando message.text
+					  fs.writeFile(path.join(folderpath,"infoServ.txt"),message.text,function(err){
+						  if(err){
+							  return console.log(err);
+						  }
+					  })
+
 					  return;
 				  }
 				},
@@ -51,11 +62,34 @@ function activate(context) {
 	  );
 }
 exports.activate = activate;
-//actualiza los datos de la tabla, el socket envia los punteros.
-function actualizar(punteros){
-	punt =  `<tr>
-		<td> gola</td>
-	</tr>`;
+//Función que se encarga de actulizar el html, lee el txt y actuliza la pantalla
+function actualizar(){
+	fs.readFile(path.join(folderpath,"infoPunts.txt"),"utf8",function(err,data){
+		if(err){
+			return console.log(err)
+		}else{
+			punt = data
+		}
+	})
+}
+//Funcion encargada de crear los archivos para el usuario a la hora de la ejecución
+function crearArchivos(){
+	
+	fs.writeFile(path.join(folderpath,"infoPunts.txt"),"",function(err){
+		if (err){
+			return console.log(err);
+		}
+	})
+	fs.writeFile(path.join(folderpath,"infoServ.txt"),"",function(err){
+		if (err){
+			return console.log(err);
+		}
+	})
+	fs.writeFile(path.join(folderpath,"main.cpp"),"",function(err){
+		if (err){
+			return console.log(err);
+		}
+	})
 }
 // retorna la estructura del html
 function getWebviewContent(puntero) {
@@ -80,6 +114,7 @@ function getWebviewContent(puntero) {
 		}
 		td{
 			background-color: wheat;
+			color: black;
 		}
 		th{
 			background-color: lightgray;
@@ -158,8 +193,10 @@ function getWebviewContent(puntero) {
             var datos = "";
             var ids =["1","2","3","4"];
             for(var i=0;i<4;i++){ 
-                datos += document.getElementById(ids[i]).value + ",";
-            }
+				datos += document.getElementById(ids[i]).value + ",";
+				document.getElementById(ids[i]).disabled = true;
+			}
+			document.getElementById("boton").disabled = true;
             vscode.postMessage({
 				command: 'alert',
 				text: datos
