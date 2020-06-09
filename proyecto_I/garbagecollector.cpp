@@ -1,4 +1,5 @@
 #include "garbagecollector.hpp"
+#include <fstream>
 
 /**
  * @brief GarbageCollector::GarbageCollector constructor de la clase, inicializa las listas y crea una lista con los id
@@ -54,10 +55,20 @@ void GarbageCollector::verificar(){
  * @return información de todos los punteros en formato html
  */
 string GarbageCollector::enviarInfo(){
+    ofstream archivo;
     string info ="";
+    archivo.open("datos.txt", ios::out);
+    archivo << "";
+    archivo.close();
     for (int i =0; i<direcciones.largo;i++){
         info = info + direcciones.buscar(i).dato->obtener_data();
+        archivo.open("datos.txt", ios::out | ios::app);
+        archivo << direcciones.buscar(i).dato->obtener_data() << endl;
+        archivo.close();
+
       }
+
+    
     return info;
 }
 void GarbageCollector::mostrarL(){
