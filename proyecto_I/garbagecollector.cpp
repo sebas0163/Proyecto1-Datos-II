@@ -1,4 +1,5 @@
 #include "garbagecollector.hpp"
+#include <fstream>
 
 
 GarbageCollector::GarbageCollector()
@@ -37,10 +38,20 @@ void GarbageCollector::verificar(){
     }
 }
 string GarbageCollector::enviarInfo(){
+    ofstream archivo;
     string info ="";
+    archivo.open("datos.txt", ios::out);
+    archivo << "";
+    archivo.close();
     for (int i =0; i<direcciones.largo;i++){
         info = info + direcciones.buscar(i).dato->obtener_data();
+        archivo.open("datos.txt", ios::out | ios::app);
+        archivo << direcciones.buscar(i).dato->obtener_data() << endl;
+        archivo.close();
+
       }
+
+    
     return info;
 }
 void GarbageCollector::mostrarL(){
