@@ -10,6 +10,7 @@
 #include "puntero.hpp"
 #include "garbagecollector.hpp"
 #include "singleton.hpp"
+#include <string.h>
 
 using namespace std;
 /**
@@ -114,13 +115,13 @@ public:
         try {
             str_dat = to_string(*dato); //bug con strings
         }  catch (exception& e) {
+            str_dat = *dato;
             cout<<"error"<<endl;
         }
         string tipo =typeid(*dato).name();
-        data= "<tr><td>"+tipo+"</td>"+"<td>"+to_string(direccion)+"</td>"+"<td>"+str_dat + "</td></tr>";
+        data= "<tr><td>"+tipo+"</td>"+"<td>"+to_string(direccion)+"</td>"+"<td>"+str_dat + "</td><td>"+to_string(getId())+"</td></tr>";
         return data;
     }
-
 
 private:
     T* dato;

@@ -25,10 +25,8 @@ garbagecollector.hpp
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
 singleton.hpp
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
-
-/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp
-garbagecollector.hpp
-/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
+string.h
+-
 
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp
 iostream
@@ -51,10 +49,6 @@ VSPtr.hpp
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp
 iostream
 -
-
-/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.cpp
-singleton.hpp
-/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
 
 /home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/singleton.hpp
 garbagecollector.hpp

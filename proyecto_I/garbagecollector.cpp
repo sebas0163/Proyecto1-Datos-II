@@ -44,25 +44,24 @@ void GarbageCollector::verificar(){
             //delete direcciones.buscar(i).dato;
             direcciones.eliminar(i);
             ids.eliminar(i);
-            cout<<"aui estoy"<<endl;
         }else{
             i++;
         }
     }
 }
 /**
- * @brief GarbageCollector::enviarInfo toma todos los datos necesarios de cada puntero, para enviarlos al heap vizualicer, mediante un socket
+ * @brief GarbageCollector::enviarInfo toma todos los datos necesarios de cada puntero, para enviarlos al heap vizualicer, mediante un txt que se está actualizando
  * @return información de todos los punteros en formato html
  */
 string GarbageCollector::enviarInfo(){
     ofstream archivo;
     string info ="";
-    archivo.open("datos.txt", ios::out);
+    archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::out);
     archivo << "";
     archivo.close();
     for (int i =0; i<direcciones.largo;i++){
         info = info + direcciones.buscar(i).dato->obtener_data();
-        archivo.open("datos.txt", ios::out | ios::app);
+        archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::out | ios::app);
         archivo << direcciones.buscar(i).dato->obtener_data() << endl;
         archivo.close();
 
@@ -75,4 +74,8 @@ void GarbageCollector::mostrarL(){
     for (int i =0; i<direcciones.largo;i++){
         cout<<direcciones.buscar(i).dato->getId()<<endl;
       }
+}
+void GarbageCollector::ejecutarHilo(){
+    verificar();
+    enviarInfo();
 }
