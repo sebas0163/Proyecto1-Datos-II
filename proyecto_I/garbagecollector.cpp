@@ -1,4 +1,5 @@
 #include "garbagecollector.hpp"
+#include "cliente.cpp"
 #include <fstream>
 
 /**
@@ -76,6 +77,23 @@ void GarbageCollector::mostrarL(){
       }
 }
 void GarbageCollector::ejecutarHilo(){
+    ifstream archivo;
+    string info ="";
+    bool conexion = false;
+    archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::in);
+    while (conexion == false){
+        if (archivo.fail()){
+            cout << "No se pudo abrir el archivo"<<endl;
+        }else{
+            getline(archivo,info);
+            if (info != ""){
+                conexion = true;
+            }
+        }
+    }
+    Cliente cliente = Cliente();
     verificar();
     enviarInfo();
+    cliente.EnviarPwrd("contra");
+    cliente.Enviar(enviarInfo());
 }
