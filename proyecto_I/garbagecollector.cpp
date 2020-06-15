@@ -57,12 +57,12 @@ void GarbageCollector::verificar(){
 string GarbageCollector::enviarInfo(){
     ofstream archivo;
     string info ="";
-    archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::out);
+    archivo.open("/home/sebastian/Escritorio/test/infoPunts.txt", ios::out);
     archivo << "";
     archivo.close();
     for (int i =0; i<direcciones.largo;i++){
         info = info + direcciones.buscar(i).dato->obtener_data();
-        archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::out | ios::app);
+        archivo.open("/home/sebastian/Escritorio/test/infoPunts.txt", ios::out | ios::app);
         archivo << direcciones.buscar(i).dato->obtener_data() << endl;
         archivo.close();
 
@@ -80,8 +80,10 @@ void GarbageCollector::ejecutarHilo(){
 
     ifstream archivo;
     string info ="";
+    verificar();
+    enviarInfo();
     
-    archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::in);
+    archivo.open("/home/sebastian/Escritorio/test/infoServ.txt", ios::in);
     
     if (archivo.fail()){
         cout << "No se pudo abrir el archivo"<<endl;
@@ -92,7 +94,7 @@ void GarbageCollector::ejecutarHilo(){
     
     archivo.close();
 
-    verificar();
+
 
     if (info != ""){
         string datos[10];
@@ -110,6 +112,7 @@ void GarbageCollector::ejecutarHilo(){
         cliente.Enviar(enviarInfo());
 
     }
+}
     
     
     

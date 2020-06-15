@@ -32,7 +32,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 31,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
@@ -105,7 +105,9 @@
 				1,
 				5,
 				7,
-				10
+				10,
+				11,
+				13
 			]
 		}
 	],
@@ -154,7 +156,9 @@
 				1,
 				5,
 				7,
-				10
+				10,
+				11,
+				13
 			]
 		},
 		{
@@ -166,7 +170,8 @@
 				4,
 				6,
 				8,
-				9
+				9,
+				12
 			]
 		}
 	],
@@ -231,6 +236,23 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "puntero.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "cliente.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "md5.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "md5.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

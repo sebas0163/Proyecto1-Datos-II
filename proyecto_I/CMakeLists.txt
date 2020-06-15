@@ -27,5 +27,8 @@ add_executable(proyecto_I
   singleton.hpp
   puntero.hpp
   puntero.cpp
+  cliente.cpp
+  md5.h
+  md5.cpp
 )
 target_link_libraries(proyecto_I Qt5::Core)

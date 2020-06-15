@@ -30,6 +30,11 @@
 			"EWIEGA46WW/moc_garbagecollector.cpp"
 		],
 		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/md5.h",
+			"MU",
+			"EWIEGA46WW/moc_md5.cpp"
+		],
+		[
 			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.hpp",
 			"MU",
 			"EWIEGA46WW/moc_puntero.cpp"
@@ -91,11 +96,19 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/cliente.cpp",
+			"MU"
+		],
+		[
 			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp",
 			"MU"
 		],
 		[
 			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp",
+			"MU"
+		],
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/md5.cpp",
 			"MU"
 		],
 		[
