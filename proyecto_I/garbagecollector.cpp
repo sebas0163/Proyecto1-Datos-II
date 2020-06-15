@@ -91,6 +91,7 @@ void GarbageCollector::ejecutarHilo(){
             }
         }
     }
+    archivo.close();
     Cliente cliente = Cliente();
     verificar();
     enviarInfo();
