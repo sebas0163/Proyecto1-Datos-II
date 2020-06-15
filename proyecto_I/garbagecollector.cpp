@@ -107,9 +107,9 @@ void GarbageCollector::ejecutarHilo(){
     Cliente cliente = Cliente(stoi(datos[2]),datos[3]);
     verificar();
     //enviarInfo(); se puede usar direcamente cuando se envia en el cliente
-    if (cliente.EnviarPwrd(datos[1])==0);{
-        cliente.Enviar(enviarInfo());
-    }
+    cliente.EnviarPwrd(datos[1]);
+    cliente.Enviar(enviarInfo());
+    
     
     
 }
