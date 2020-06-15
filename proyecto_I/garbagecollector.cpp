@@ -94,7 +94,7 @@ void GarbageCollector::ejecutarHilo(){
     archivo.close();
     Cliente cliente = Cliente();
     verificar();
-    enviarInfo();
+    //enviarInfo(); se puede usar direcamente cuando se envia en el cliente
     cliente.EnviarPwrd("contra");
     cliente.Enviar(enviarInfo());
 }
