@@ -36,9 +36,29 @@ void bwrite(string user, int *puntero){
     OS << SW.write(obj);
     OS.close();
     *puntero += 1;
-    cout<<"\n json escrito \n";
+    
 
 }
+
+void writedata(string data, int *puntero){
+
+    ifstream ifs("ServerData.json");
+    Json::Reader reader;
+    Json::Value obj;
+    reader.parse(ifs, obj); 
+    ifs.close();
+    obj["conexiones"]["Usuario"][*puntero-1] = data;
+
+    Json::StyledWriter SW;
+    ofstream OS;
+    OS.open("ServerData.json");
+    OS << SW.write(obj);
+    OS.close();
+    *puntero += 1;
+    
+
+}
+
 
 
 //Server side
@@ -122,7 +142,7 @@ int main(int argc, char *argv[])
             bytesRead += recv(newSd, (char*)&msg, sizeof(msg), 0);
             if(!strcmp(msg, pswrd.c_str()))
             {
-                    //bwrite("usuario",contador);
+                    bwrite("usuario",contador);
                     B = false;
                     cpw = 1;
                     string data = "Correct";
@@ -131,7 +151,6 @@ int main(int argc, char *argv[])
                     send(newSd, (char*)&msg, strlen(msg), 0);
                     
 
-                    cout << "entro al if" << endl;
 
             }else{
                     string data = "Incorrect";
@@ -152,6 +171,7 @@ int main(int argc, char *argv[])
             cout << "Client has quit the session" << endl;
             break;
         }
+        writedata(msg,contador);
         cout << "Client: " << msg << endl;
         cout << ">";
         string data = "datos recibidos";
