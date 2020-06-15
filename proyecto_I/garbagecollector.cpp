@@ -77,39 +77,40 @@ void GarbageCollector::mostrarL(){
       }
 }
 void GarbageCollector::ejecutarHilo(){
+
     ifstream archivo;
     string info ="";
-    bool conexion = false;
+    
     archivo.open("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt", ios::in);
-    while (conexion == false){
-        if (archivo.fail()){
-            cout << "No se pudo abrir el archivo"<<endl;
-        }else{
-            getline(archivo,info);
-            if (info != ""){
-                conexion = true;
-            }
-        }
+    
+    if (archivo.fail()){
+        cout << "No se pudo abrir el archivo"<<endl;
+    }else{
+        getline(archivo,info);
+        
     }
+    
     archivo.close();
 
-    string datos[10];
-    int pos =0;
-    int i = 0;
-    while (pos != -1) {
-        pos = info.find(",");
-        datos[i] = info.substr(0,pos);
-        //cout<<info.substr(0,pos)<<endl;
-        info = info.substr(pos+1,info.length()-1);
-        i++;
-    }
-
-    Cliente cliente = Cliente(stoi(datos[2]),datos[3]);
     verificar();
-    //enviarInfo(); se puede usar direcamente cuando se envia en el cliente
-    cliente.EnviarPwrd(datos[1]);
-    cliente.Enviar(enviarInfo());
+
+    if (info != ""){
+        string datos[10];
+        int pos = 0;
+        int i = 0;
+        while (pos != -1) {
+            pos = info.find(",");
+            datos[i] = info.substr(0,pos);
+            //cout<<info.substr(0,pos)<<endl;
+            info = info.substr(pos+1,info.length()-1);
+            i++;
+        }
+        Cliente cliente = Cliente(stoi(datos[2]),datos[3]);
+        cliente.EnviarPwrd(datos[1]);
+        cliente.Enviar(enviarInfo());
+
+    }
     
     
     
-}
+
