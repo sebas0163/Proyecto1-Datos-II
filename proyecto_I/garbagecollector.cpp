@@ -92,9 +92,24 @@ void GarbageCollector::ejecutarHilo(){
         }
     }
     archivo.close();
-    Cliente cliente = Cliente();
+
+    string datos[10];
+    int pos =0;
+    int i = 0;
+    while (pos != -1) {
+        pos = info.find(",");
+        datos[i] = info.substr(0,pos);
+        //cout<<info.substr(0,pos)<<endl;
+        info = info.substr(pos+1,info.length()-1);
+        i++;
+    }
+
+    Cliente cliente = Cliente(stoi(datos[2]),datos[3]);
     verificar();
     //enviarInfo(); se puede usar direcamente cuando se envia en el cliente
-    cliente.EnviarPwrd("contra");
-    cliente.Enviar(enviarInfo());
+    if (cliente.EnviarPwrd(datos[1])==0);{
+        cliente.Enviar(enviarInfo());
+    }
+    
+    
 }

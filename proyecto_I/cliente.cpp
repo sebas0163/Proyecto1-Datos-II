@@ -25,14 +25,14 @@ class Cliente{
         char msg[1500];
         int clientSd;
         int status;
-        Cliente();
-        void EnviarPwrd(string);
+        Cliente(int,string);
+        int EnviarPwrd(string);
         void Enviar(string);
         void closeSocket();
 
 };
 
-Cliente::Cliente(){
+Cliente::Cliente(int puerto, string ip){
 
     
     clientSd = socket(AF_INET, SOCK_STREAM, 0);
@@ -40,7 +40,7 @@ Cliente::Cliente(){
     sendSockAddr.sin_family = AF_INET; 
     sendSockAddr.sin_addr.s_addr = INADDR_ANY;
     sendSockAddr.sin_addr.s_addr = inet_addr("127.0.0.1");    
-    sendSockAddr.sin_port = 12345; 
+    sendSockAddr.sin_port = puerto; 
     status = connect(clientSd,
                          (sockaddr*) &sendSockAddr, sizeof(sendSockAddr));
     if(status < 0)
@@ -52,7 +52,7 @@ Cliente::Cliente(){
 
 }
 
-void Cliente::EnviarPwrd(string datos){
+int Cliente::EnviarPwrd(string datos){
 
     memset(&msg, 0, sizeof(msg));
     strcpy(msg, md5(datos).c_str());
@@ -61,6 +61,13 @@ void Cliente::EnviarPwrd(string datos){
     memset(&msg, 0, sizeof(msg));//clear the buffer
     recv(clientSd, (char*)&msg, sizeof(msg), 0);
     cout << "respuesta: " << msg << endl;
+    if (!strcmp(msg, "Incorrect")){
+        return 1;
+    }else
+    {
+        return 0;
+    }
+    
     
 }
 
