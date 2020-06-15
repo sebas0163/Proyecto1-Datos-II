@@ -85,11 +85,34 @@ function crearArchivos(){
 			return console.log(err);
 		}
 	})
-	fs.writeFile(path.join(folderpath,"main.cpp"),"",function(err){
+	fs.writeFile(path.join(folderpath,"main.cpp"),getMain(),function(err){
 		if (err){
 			return console.log(err);
 		}
 	})
+}
+function getMain(){
+	return`#include<iostream>
+#include<thread>
+#include <unistd.h>
+#include "arranque/VSPtr.hpp"
+	
+using namespace std;
+	
+void hilo(){
+	GarbageCollector* gc = Singleton::getInstancia();
+	while(true){
+		gc->ejecutarHilo();
+		sleep(4);
+	}
+}
+	
+int main(){
+	thread p(hilo);
+	// incertar codigo aqui 
+	p.join();
+		
+}`
 }
 // retorna la estructura del html
 function getWebviewContent(puntero) {

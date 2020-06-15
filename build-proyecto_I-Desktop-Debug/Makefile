@@ -156,6 +156,33 @@ proyecto_I_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I_autogen.dir/build.make CMakeFiles/proyecto_I_autogen.dir/build
 .PHONY : proyecto_I_autogen/fast
 
+cliente.o: cliente.cpp.o
+
+.PHONY : cliente.o
+
+# target to build an object file
+cliente.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/cliente.cpp.o
+.PHONY : cliente.cpp.o
+
+cliente.i: cliente.cpp.i
+
+.PHONY : cliente.i
+
+# target to preprocess a source file
+cliente.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/cliente.cpp.i
+.PHONY : cliente.cpp.i
+
+cliente.s: cliente.cpp.s
+
+.PHONY : cliente.s
+
+# target to generate assembly for a file
+cliente.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proyecto_I.dir/build.make CMakeFiles/proyecto_I.dir/cliente.cpp.s
+.PHONY : cliente.cpp.s
+
 garbagecollector.o: garbagecollector.cpp.o
 
 .PHONY : garbagecollector.o
@@ -301,6 +328,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... proyecto_I_autogen"
 	@echo "... proyecto_I"
+	@echo "... cliente.o"
+	@echo "... cliente.i"
+	@echo "... cliente.s"
 	@echo "... garbagecollector.o"
 	@echo "... garbagecollector.i"
 	@echo "... garbagecollector.s"

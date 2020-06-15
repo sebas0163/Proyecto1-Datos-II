@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Lista.hpp"
 #include "puntero.hpp"
+#include "cliente.hpp"
+#include <fstream>
 /**
  *@file garbagecollector.hpp
  * @author Sebastián moya
@@ -28,6 +30,7 @@ public:
     string infoPunts();
     void ejecutarHilo();
 private:
+        string informacion;
         Lista<Puntero*> direcciones;
         Lista<int> ids;
 };

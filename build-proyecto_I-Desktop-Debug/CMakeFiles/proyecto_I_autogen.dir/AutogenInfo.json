@@ -25,6 +25,11 @@
 			"EWIEGA46WW/moc_VSPtr.cpp"
 		],
 		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/cliente.hpp",
+			"MU",
+			"EWIEGA46WW/moc_cliente.cpp"
+		],
+		[
 			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.hpp",
 			"MU",
 			"EWIEGA46WW/moc_garbagecollector.cpp"
@@ -90,6 +95,10 @@
 	"SETTINGS_FILE" : "/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/build-proyecto_I-Desktop-Debug/CMakeFiles/proyecto_I_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/cliente.cpp",
+			"MU"
+		],
 		[
 			"/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp",
 			"MU"

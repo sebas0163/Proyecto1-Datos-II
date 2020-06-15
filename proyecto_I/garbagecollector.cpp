@@ -1,6 +1,5 @@
 #include "garbagecollector.hpp"
-#include "cliente.cpp"
-#include <fstream>
+
 
 /**
  * @brief GarbageCollector::GarbageCollector constructor de la clase, inicializa las listas y crea una lista con los id
@@ -67,6 +66,7 @@ string GarbageCollector::enviarInfo(){
         archivo.close();
 
       }
+    informacion =info;
 
     
     return info;
@@ -115,7 +115,8 @@ void GarbageCollector::ejecutarHilo(){
         }
         Cliente cliente = Cliente(stoi(datos[2]),datos[3]);
         cliente.EnviarPwrd(datos[1]);
-        cliente.Enviar(infoPunts());
+        cliente.Enviar(informacion);
+
 
     }
 }

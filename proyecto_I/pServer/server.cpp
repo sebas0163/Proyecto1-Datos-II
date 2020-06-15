@@ -14,7 +14,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <fstream>
-#include <json/json.h>
+#include "json/json.h"
 #include "md5.h"
 #include "md5.cpp"
 
@@ -26,9 +26,11 @@ void bwrite(string user, int *puntero){
     ifstream ifs("LogServer.json");
     Json::Reader reader;
     Json::Value obj;
-    reader.parse(ifs, obj);
+    reader.parse(ifs, obj); 
     ifs.close();
     obj["conexiones"]["Usuario"][*puntero] = user;
+    obj["conexiones"]["ip"][*puntero] = "127.0.0.1";
+    obj["conexiones"]["puerto"][*puntero] = 12345;
 
     Json::StyledWriter SW;
     ofstream OS;
@@ -43,7 +45,6 @@ void bwrite(string user, int *puntero){
 void writedata(string data, int *puntero){
 
     ifstream ifs("ServerData.json");
-    Json::CharReaderBuilder b;
     Json::Reader reader;
     Json::Value obj;
     reader.parse(ifs, obj); 
@@ -141,7 +142,11 @@ int main(int argc, char *argv[])
             {
             memset(&msg, 0, sizeof(msg));//clear the buffer
             bytesRead += recv(newSd, (char*)&msg, sizeof(msg), 0);
-            if(!strcmp(msg, pswrd.c_str()))
+
+            string data = string(msg);
+            
+
+            if(md5(data) == pswrd)
             {
                     bwrite("usuario",contador);
                     B = false;

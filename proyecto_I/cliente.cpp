@@ -1,35 +1,4 @@
-#include <iostream>
-#include <string>
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <netdb.h>
-#include <sys/uio.h>
-#include <sys/time.h>
-#include <sys/wait.h>
-#include <fcntl.h>
-#include <fstream>
-
-
-using namespace std;
-
-class Cliente{
-
-    public:
-        char msg[1500];
-        int clientSd;
-        int status;
-        Cliente(int,string);
-        int EnviarPwrd(string);
-        void Enviar(string);
-        void closeSocket();
-
-};
+#include "cliente.hpp"
 
 Cliente::Cliente(int puerto, string ip){
 
@@ -38,7 +7,7 @@ Cliente::Cliente(int puerto, string ip){
     struct sockaddr_in sendSockAddr, peer_addr; 
     sendSockAddr.sin_family = AF_INET; 
     sendSockAddr.sin_addr.s_addr = INADDR_ANY;
-    sendSockAddr.sin_addr.s_addr = inet_addr("127.0.0.1");    
+    sendSockAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
     sendSockAddr.sin_port = puerto; 
     status = connect(clientSd,
                          (sockaddr*) &sendSockAddr, sizeof(sendSockAddr));
@@ -52,7 +21,6 @@ Cliente::Cliente(int puerto, string ip){
 }
 
 int Cliente::EnviarPwrd(string datos){
-
     memset(&msg, 0, sizeof(msg));
     strcpy(msg, datos.c_str());
     send(clientSd, (char*)&msg, strlen(msg), 0);
@@ -71,7 +39,6 @@ int Cliente::EnviarPwrd(string datos){
 }
 
 void Cliente::Enviar(string datos){
-
     memset(&msg, 0, sizeof(msg));
     strcpy(msg, datos.c_str());
     send(clientSd, (char*)&msg, strlen(msg), 0);
