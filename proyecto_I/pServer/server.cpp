@@ -14,7 +14,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <fstream>
-#include "jsoncpp/json/json.h"
+#include <json/json.h>
 #include "md5.h"
 #include "md5.cpp"
 
@@ -26,7 +26,7 @@ void bwrite(string user, int *puntero){
     ifstream ifs("LogServer.json");
     Json::Reader reader;
     Json::Value obj;
-    reader.parse(ifs, obj); 
+    reader.parse(ifs, obj);
     ifs.close();
     obj["conexiones"]["Usuario"][*puntero] = user;
 
@@ -43,6 +43,7 @@ void bwrite(string user, int *puntero){
 void writedata(string data, int *puntero){
 
     ifstream ifs("ServerData.json");
+    Json::CharReaderBuilder b;
     Json::Reader reader;
     Json::Value obj;
     reader.parse(ifs, obj); 

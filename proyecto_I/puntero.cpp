@@ -21,4 +21,7 @@ void Puntero::destruir(){
 string Puntero::obtener_data(){
  cout<<"hola"<<endl;
 }
+string Puntero::infoPunt(){
+
+}
 

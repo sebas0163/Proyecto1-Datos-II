@@ -64,7 +64,7 @@ function activate(context) {
 exports.activate = activate;
 //Función que se encarga de actulizar el html, lee el txt y actuliza la pantalla
 function actualizar(){
-	fs.readFile("/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/datos.txt","utf8",function(err,data){
+	fs.readFile("/home/sebastian/Escritorio/test/infoPunts.txt","utf8",function(err,data){
 		if(err){
 			return console.log(err)
 		}else{

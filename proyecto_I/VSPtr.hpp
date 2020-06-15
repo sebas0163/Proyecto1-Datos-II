@@ -122,6 +122,20 @@ public:
         data= "<tr><td>"+tipo+"</td>"+"<td>"+to_string(direccion)+"</td>"+"<td>"+str_dat + "</td><td>"+to_string(getId())+"</td></tr>";
         return data;
     }
+    string infoPunt(){
+        long  direccion = (long)dato;
+        string str_dat;
+        string data;
+        try {
+            str_dat = to_string(*dato); //bug con strings
+        }  catch (exception& e) {
+            str_dat = *dato;
+            cout<<"error"<<endl;
+        }
+        string tipo =typeid(*dato).name();
+        data= "Tipo: "+tipo+"\r\n Dirección: "+to_string(direccion)+ "\r\n Dato: "+str_dat +"\r\n Id: "+to_string(getId())+"\r\n";
+        return data;
+    }
 
 private:
     T* dato;

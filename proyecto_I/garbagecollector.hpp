@@ -25,6 +25,7 @@ public:
     void verificar();
     void mostrarL();
     string enviarInfo();
+    string infoPunts();
     void ejecutarHilo();
 private:
         Lista<Puntero*> direcciones;

@@ -118,9 +118,6 @@
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/VSPtr.hpp">
 			<Option target="proyecto_I"/>
 		</Unit>
-		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/cliente.cpp">
-			<Option target="proyecto_I"/>
-		</Unit>
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/garbagecollector.cpp">
 			<Option target="proyecto_I"/>
 		</Unit>
@@ -128,12 +125,6 @@
 			<Option target="proyecto_I"/>
 		</Unit>
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/main.cpp">
-			<Option target="proyecto_I"/>
-		</Unit>
-		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/md5.cpp">
-			<Option target="proyecto_I"/>
-		</Unit>
-		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/md5.h">
 			<Option target="proyecto_I"/>
 		</Unit>
 		<Unit filename="/home/sebastian/Escritorio/Datos 2/Proyecto1-Datos-II/proyecto_I/puntero.cpp">

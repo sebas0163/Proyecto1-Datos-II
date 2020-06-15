@@ -21,6 +21,7 @@ public:
     virtual bool comprobar();
     virtual void destruir();
     virtual string obtener_data();
+    virtual string infoPunt();
 };
 
 #endif // PUNTERO_HPP

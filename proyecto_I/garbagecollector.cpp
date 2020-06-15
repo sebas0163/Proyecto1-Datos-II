@@ -71,6 +71,13 @@ string GarbageCollector::enviarInfo(){
     
     return info;
 }
+string GarbageCollector::infoPunts(){
+    string info = "";
+    for (int i =0; i<direcciones.largo;i++){
+        info = info + direcciones.buscar(i).dato->infoPunt();
+      }
+    return info;
+}
 void GarbageCollector::mostrarL(){
     for (int i =0; i<direcciones.largo;i++){
         cout<<direcciones.buscar(i).dato->getId()<<endl;
@@ -89,12 +96,11 @@ void GarbageCollector::ejecutarHilo(){
         cout << "No se pudo abrir el archivo"<<endl;
     }else{
         getline(archivo,info);
+
         
     }
     
     archivo.close();
-
-
 
     if (info != ""){
         string datos[10];
@@ -109,7 +115,7 @@ void GarbageCollector::ejecutarHilo(){
         }
         Cliente cliente = Cliente(stoi(datos[2]),datos[3]);
         cliente.EnviarPwrd(datos[1]);
-        cliente.Enviar(enviarInfo());
+        cliente.Enviar(infoPunts());
 
     }
 }
