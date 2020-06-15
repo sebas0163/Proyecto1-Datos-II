@@ -50,6 +50,8 @@ void writedata(string data, int *puntero){
     reader.parse(ifs, obj); 
     ifs.close();
     obj["conexiones"]["Usuario"][*puntero-1] = data;
+    obj["conexiones"]["ip"][*puntero] = "127.0.0.1";
+    obj["conexiones"]["puerto"][*puntero] = 12345;
 
     Json::StyledWriter SW;
     ofstream OS;
