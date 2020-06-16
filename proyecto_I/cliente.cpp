@@ -14,8 +14,7 @@
 #include <sys/wait.h>
 #include <fcntl.h>
 #include <fstream>
-#include "md5.h"
-#include "md5.cpp"
+
 
 using namespace std;
 
@@ -55,7 +54,7 @@ Cliente::Cliente(int puerto, string ip){
 int Cliente::EnviarPwrd(string datos){
 
     memset(&msg, 0, sizeof(msg));
-    strcpy(msg, md5(datos).c_str());
+    strcpy(msg, datos.c_str());
     send(clientSd, (char*)&msg, strlen(msg), 0);
     cout << "Awaiting server response..." << endl;
     memset(&msg, 0, sizeof(msg));//clear the buffer

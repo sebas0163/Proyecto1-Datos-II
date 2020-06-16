@@ -1,0 +1,7 @@
+{
+   "conexiones" : {
+      "Usuario" : [ "usuario" ],
+      "ip" : [ "127.0.0.1" ],
+      "puerto" : [ 12345 ]
+   }
+}
