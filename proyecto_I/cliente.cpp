@@ -1,5 +1,16 @@
+/** 
+ * @file cliente.cpp
+ * @author Harold Espinoza 
+ * @brief Definicion de las funciones de la clase cliente 
+ * @version 1.8
+ * @date 16/06/20  
+ * */
+
 #include "cliente.hpp"
 
+/** 
+ * @brief Cliente::Cliente constructor para la clase cliente que inicia la conexion con el server
+ */
 Cliente::Cliente(int puerto, string ip){
 
     
@@ -20,6 +31,12 @@ Cliente::Cliente(int puerto, string ip){
 
 }
 
+/** 
+ * @brief Cliente::EnviarPwrd Funcion encargada de enviar la contraseña al servidor 
+ * @param datos Recibe la contraseña ingresada por el usuario
+ * @return Regresa un entero 1 si la contraseña es erronea o un 0 si la contraseña es correcta
+ */
+
 int Cliente::EnviarPwrd(string datos){
     memset(&msg, 0, sizeof(msg));
     strcpy(msg, datos.c_str());
@@ -38,6 +55,12 @@ int Cliente::EnviarPwrd(string datos){
     
 }
 
+/** 
+ * @brief Cliente::EnviarPwrd Funcion encargada de enviar los datos al servidor 
+ * @param datos Recibe los datos que se deben enviar al servidor
+ * 
+ */
+
 void Cliente::Enviar(string datos){
     memset(&msg, 0, sizeof(msg));
     strcpy(msg, datos.c_str());
@@ -48,6 +71,10 @@ void Cliente::Enviar(string datos){
     cout << "respuesta: " << msg << endl;
     
 }
+
+/** 
+ * @brief Cliente::closeSocket Funcion que cierra la conexion con el servidor 
+ */
 
 void Cliente::closeSocket(){
     string datos = "exit";

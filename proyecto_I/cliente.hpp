@@ -1,3 +1,11 @@
+/** 
+ * @file cliente.hpp 
+ * @author Harold Espinoza
+ * @version 1.5
+ * @date 16/06/20
+ * @brief Plantilla de la clase cliente con socket  
+ */
+
 #ifndef CLIENTE_HPP
 #define CLIENTE_HPP
 
@@ -20,6 +28,10 @@
 
 using namespace std;
 
+
+/** 
+ * @brief Clase Cliente encargada de manejar las funciones para la comunicacion con sockets 
+ */
 class Cliente{
 
     public:
